@@ -1,12 +1,16 @@
-# Write-up Template
+## VM ##
+Cost: Higher, since you pay continuously and manage resources yourself.
+Scalability: Manual and slower to adjust.
+Availability: Needs manual setup (availability sets/zones).
+Workflow: Full control, but requires maintenance and updates.
 
-### Analyze, choose, and justify the appropriate resource option for deploying the app.
+## App Service ##
 
-*For **both** a VM or App Service solution for the CMS app:*
-- *Analyze costs, scalability, availability, and workflow*
-- *Choose the appropriate solution (VM or App Service) for deploying the app*
-- *Justify your choice*
+Cost: More efficient for web apps, no infrastructure management.
+Scalability: Automatic and easy to configure.
+Availability: Built-in high availability.
+Workflow: Simple deployment with minimal maintenance.
 
-### Assess app changes that would change your decision.
+## Final Decision: App Service ##
 
-*Detail how the app and any other needs would have to change for you to change your decision in the last section.* 
+I would choose App Service because it simplifies deployment, scales automatically, and reduces maintenance effort. It is better suited for a CMS web application where ease of use and reliability are important.
