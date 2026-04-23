@@ -42,6 +42,12 @@ def new_post():
         form=form
     )
 
+@app.route('/delete_post/<int:id>', methods=['POST'])
+@login_required
+def delete_post(id):
+    post = Post.query.get(int(id))
+    post.delete()
+    return redirect(url_for('home'))
 
 @app.route('/post/<int:id>', methods=['GET', 'POST'])
 @login_required
@@ -67,7 +73,10 @@ def login():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
+            print("Invalid username or password")
             return redirect(url_for('login'))
+        else:
+            print("Logging successful")
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
